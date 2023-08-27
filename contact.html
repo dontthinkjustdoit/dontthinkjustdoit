@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="contact.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Ankit Singh</a>
+      <nav class="navbar" id="navbar">
+        <a href="portfolio.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="project.html">Projects</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h1>Connect on Social Media</h1>
+      <div class="connect">
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-meta"></i></a>
+      </div>
+    </div>
+    <div class="contact-box">
+      <form onsubmit="sendEmail(); reset(); return false;">
+        <h3>Get in Touch</h3>
+        <input
+          type="text"
+          class="input-field"
+          placeholder="Your Name"
+          required
+        />
+        <input
+          type="email"
+          id="email"
+          class="input-field"
+          placeholder="Your Email"
+          required
+        />
+        <input type="text" class="input-field" placeholder="Subject" required />
+        <textarea
+          name="text"
+          wrap="soft"
+          class="input-field textarea-field"
+          placeholder="Your Message"
+          required
+          rows="10"
+        ></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+      function sendEmail() {
+        Email.send({
+          Host: "smtp.elasticemail.com",
+          Username: " ",
+          Password: " ",
+          To: " ",
+          From: document.getElementById("email").value,
+          Subject: "This is the subject",
+          Body: "And this is the body",
+        }).then((message) => alert(message));
+      }
+    </script>
+  </body>
+</html>
